@@ -6,7 +6,7 @@
 Stenglein Lab Standard Taxonomic Assessment Pipeline Documentation
 ==================================================================
 
-This is a descriptio of the website. Fill in more information later.
+This is a description of the website. Fill in more information later.
 
 .. toctree::
    :maxdepth: 2
