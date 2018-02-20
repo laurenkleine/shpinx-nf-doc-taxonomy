@@ -1,5 +1,5 @@
-Summary
-=======
+Project Summary
+===============
 
 Summary of project ...
 

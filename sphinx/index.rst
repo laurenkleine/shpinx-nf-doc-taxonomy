@@ -13,12 +13,19 @@ This is a description of the website. Fill in more information later.
    :caption: Contents:
 
    summary
-   code
+   Software_Requirements
+   Installation
+   Usage
+   ex
+   ref
+   contact
+
+.. figure:: logo.png
+    :width: 200px
+    :align: center
+    :height: 100px
+    :alt: alternate text
+
+    `The Stenglein Lab <http://www.stengleinlab.org/>`_
 
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

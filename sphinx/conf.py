@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.abspath('../'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Doc Website'
+project = 'Stenglein Lab Standard Taxonomic Assessment'
 copyright = '2018, Lauren Kleine'
 author = 'Lauren Kleine'
 
