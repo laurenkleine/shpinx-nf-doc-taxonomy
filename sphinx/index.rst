@@ -6,7 +6,7 @@
 Stenglein Lab Standard Taxonomic Assessment Pipeline Documentation
 ==================================================================
 
-This is a description of the website. Fill in more information later.
+The Stenglein Lab Standard Taxonomic Assessment Pipeline taxonomically assigns reads in a NGS dataset that remain after filtering host sequences.
 
 .. toctree::
    :maxdepth: 2
