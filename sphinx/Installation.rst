@@ -18,7 +18,7 @@ Move Nextflow executable into your $PATH:
 
 Make test directory:
 
-:bash:`$ mkdir amr_test && cd amr_test`
+:bash:`$ mkdir taxonomy_nf && cd taxonomy_nf`
 
 Download pipeline source code:
 
