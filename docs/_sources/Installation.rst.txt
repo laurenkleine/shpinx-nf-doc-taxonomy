@@ -1,6 +1,11 @@
 Installation Tutorial
 =====================
 
+.. role:: bash(code)
+   :language: bash
+
+Here is some awesome bash code :bash:`a = b + c`.
+
 Connect to remote server:
 
 $ ssh [USER]@[system]
