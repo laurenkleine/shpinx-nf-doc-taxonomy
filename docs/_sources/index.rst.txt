@@ -8,6 +8,8 @@ Stenglein Lab Standard Taxonomic Assessment Pipeline Documentation
 
 The Stenglein Lab Standard Taxonomic Assessment Pipeline taxonomically assigns reads in a NGS dataset that remain after filtering host sequences.
 
+This pipeline uses `Nextflow <https://www.nextflow.io/>`_, a bioinformatics domain specific language for workflow building. Software dependencies are handled using `Docker <https://www.docker.com/>`_ – a container technology which offers excellent accessibility and reproducibility.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -18,7 +20,6 @@ The Stenglein Lab Standard Taxonomic Assessment Pipeline taxonomically assigns r
    Usage
    ex
    ref
-   contact
 
 .. figure:: logo.png
     :width: 200px
