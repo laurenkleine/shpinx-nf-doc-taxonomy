@@ -1,9 +1,15 @@
 Installation Tutorial
 =====================
 
-Connect to remote server:
+.. role:: bash(code)
+   :language: bash
 
-$ ssh [USER]@[system]
+
+Connect to remote server
+
+|
+
+:bash:`$ ssh [USER]@[system]`
 
 Install Nextflow:
 

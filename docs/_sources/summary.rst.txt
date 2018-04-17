@@ -6,11 +6,19 @@ The main steps in the pipeline are:
 
 1.	Pre-processing quality assessment with FastQC
 
+|
+
 2.	Trimming or removal of low quality sequences (cutadapt) and collapse of non-unique read pairs (CD-HIT)
+
+|
 
 3.	Post-processing quality assessment with FastQC
 
+|
+
 4.	Filtering of host sequences (Bowtie2)
+
+|
 
 5.	De novo assembly of remaining reads (SPAdes) and taxonomic assessment of contigs, first by nucleotide to nucleotide alignments (BLASTn) and then by translated-nucleotide to protein alignments (DIAMOND)
 

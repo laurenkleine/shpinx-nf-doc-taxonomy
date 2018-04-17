@@ -160,9 +160,29 @@
 <p>The main steps in the pipeline are:</p>
 <ol class="arabic simple">
 <li>Pre-processing quality assessment with FastQC</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="2">
 <li>Trimming or removal of low quality sequences (cutadapt) and collapse of non-unique read pairs (CD-HIT)</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="3">
 <li>Post-processing quality assessment with FastQC</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="4">
 <li>Filtering of host sequences (Bowtie2)</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="5">
 <li>De novo assembly of remaining reads (SPAdes) and taxonomic assessment of contigs, first by nucleotide to nucleotide alignments (BLASTn) and then by translated-nucleotide to protein alignments (DIAMOND)</li>
 </ol>
 <div class="figure align-center">
