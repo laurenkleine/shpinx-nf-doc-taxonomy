@@ -4,24 +4,22 @@ Installation Tutorial
 .. role:: bash(code)
    :language: bash
 
-Here is some awesome bash code :bash:`a = b + c`.
-
 Connect to remote server:
 
-$ ssh [USER]@[system]
+:bash:`$ ssh [USER]@[system]`
 
 Install Nextflow:
 
-$ curl -s `https://get.nextflow.io` | bash
+:bash:`$ curl -s https://get.nextflow.io | bash`
 
 Move Nextflow executable into your $PATH:
 
-$ mv nextflow $HOME/bin
+:bash:`$ mv nextflow $HOME/bin`
 
 Make test directory:
 
-$ mkdir amr_test && cd amr_test
+:bash:`$ mkdir amr_test && cd amr_test`
 
 Download pipeline source code:
 
-$ git clone `https://github.com/laurenkleine/taxonomy-nf` .
+:bash:`$ git clone https://github.com/laurenkleine/taxonomy-nf .`

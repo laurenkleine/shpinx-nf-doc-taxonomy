@@ -36,7 +36,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Stenglein Lab Standard Taxonomic Assessment 0.0.1 documentation" href="index.html"/>
-        <link rel="next" title="Usage" href="Usage.html"/>
+        <link rel="next" title="Running the Pipeline" href="Usage.html"/>
         <link rel="prev" title="Software Requirements" href="Software_Requirements.html"/> 
 
   
@@ -88,10 +88,23 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="summary.html">Pipeline Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="summary.html">Pipeline Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="summary.html#input">Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html#quality-assessment-and-pre-processing">Quality Assessment and Pre-Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html#host-filtering">Host Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html#de-novo-assembly-of-reads">De novo Assembly of Reads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html#taxonomic-assessment-of-contigs">Taxonomic Assessment of Contigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html#output">Output</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Software_Requirements.html">Software Requirements</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Usage.html">Running the Pipeline</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Usage.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Usage.html#docker-profile">Docker Profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Usage.html#usage">Usage</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="ex.html">Example Analysis and Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ref.html">References</a></li>
 </ul>
@@ -157,17 +170,16 @@
             
   <div class="section" id="installation-tutorial">
 <h1>Installation Tutorial<a class="headerlink" href="#installation-tutorial" title="Permalink to this headline">¶</a></h1>
-<p>Here is some awesome bash code <code class="code bash docutils literal notranslate"><span class="name variable"><span class="pre">a</span></span> <span class="operator"><span class="pre">=</span></span> <span class="pre">b</span> <span class="pre">+</span> <span class="pre">c</span></code>.</p>
 <p>Connect to remote server:</p>
-<p>$ ssh [USER]&#64;[system]</p>
+<p><code class="code bash docutils literal notranslate"><span class="pre">$</span> <span class="pre">ssh</span> <span class="operator"><span class="pre">[</span></span><span class="pre">USER</span><span class="operator"><span class="pre">]</span></span><span class="pre">&#64;</span><span class="operator"><span class="pre">[</span></span><span class="pre">system</span><span class="operator"><span class="pre">]</span></span></code></p>
 <p>Install Nextflow:</p>
-<p>$ curl -s <cite>https://get.nextflow.io</cite> | bash</p>
+<p><code class="code bash docutils literal notranslate"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">-s</span> <span class="pre">https://get.nextflow.io</span> <span class="punctuation"><span class="pre">|</span></span> <span class="pre">bash</span></code></p>
 <p>Move Nextflow executable into your $PATH:</p>
-<p>$ mv nextflow $HOME/bin</p>
+<p><code class="code bash docutils literal notranslate"><span class="pre">$</span> <span class="pre">mv</span> <span class="pre">nextflow</span> <span class="name variable"><span class="pre">$HOME</span></span><span class="pre">/bin</span></code></p>
 <p>Make test directory:</p>
-<p>$ mkdir amr_test &amp;&amp; cd amr_test</p>
+<p><code class="code bash docutils literal notranslate"><span class="pre">$</span> <span class="pre">mkdir</span> <span class="pre">amr_test</span> <span class="operator"><span class="pre">&amp;&amp;</span></span> <span class="name builtin"><span class="pre">cd</span></span> <span class="pre">amr_test</span></code></p>
 <p>Download pipeline source code:</p>
-<p>$ git clone <cite>https://github.com/laurenkleine/taxonomy-nf</cite> .</p>
+<p><code class="code bash docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/laurenkleine/taxonomy-nf</span> <span class="pre">.</span></code></p>
 </div>
 
 

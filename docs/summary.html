@@ -88,10 +88,23 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Pipeline Summary</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Pipeline Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#input">Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quality-assessment-and-pre-processing">Quality Assessment and Pre-Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#host-filtering">Host Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#de-novo-assembly-of-reads">De novo Assembly of Reads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#taxonomic-assessment-of-contigs">Taxonomic Assessment of Contigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Software_Requirements.html">Software Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Usage.html">Running the Pipeline</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Usage.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Usage.html#docker-profile">Docker Profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Usage.html#usage">Usage</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="ex.html">Example Analysis and Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ref.html">References</a></li>
 </ul>
@@ -157,21 +170,49 @@
             
   <div class="section" id="pipeline-summary">
 <h1>Pipeline Summary<a class="headerlink" href="#pipeline-summary" title="Permalink to this headline">¶</a></h1>
-<p>The main steps in the pipeline are:</p>
-<ol class="arabic simple">
-<li>Pre-processing quality assessment with FastQC</li>
-<li>Trimming or removal of low quality sequences (cutadapt) and collapse of non-unique read pairs (CD-HIT)</li>
-<li>Post-processing quality assessment with FastQC</li>
-<li>Langmead B, Salzberg SL. Fast gapped-read alignment with Bowtie 2. Nat Methods 2012;9:357–359.</li>
-<li>De novo assembly of remaining reads (SPAdes) and taxonomic assessment of contigs, first by nucleotide to nucleotide alignments (BLASTn) and then by translated-nucleotide to protein alignments (DIAMOND)</li>
-</ol>
+<p>The Stenglein Lab Standard Taxonomic Assessment Pipeline is a metagenomics pipeline that taxonomically assigns reads in a NGS dataset that remain after filtering host sequences.</p>
 <div class="figure align-center">
 <img alt="_images/wf.png" src="_images/wf.png" />
 </div>
-<p>This version of the Stenglein Lab Standard Taxonomic assessment pipeline requires the input of paired FASTQ files. These files are first assessed using FastQC (version 0.11.5) to perform an initial quality control inspection to ensure that the raw data is satisfactory [1]. Sequences are then trimmed using Cutadapt (version 1.9.1) to trim low-quality bases and adaptor sequences [2]. Default pipeline parameters set quality base to 33 and quality cutoff to 30 for the 50 and 30 ends. The first base of each sequence is also trimmed. The sequence clustering tool CD-HIT (version 4.6.5) is then used to collapse reads with 99% global pairwise identity, leaving only unique reads for further analysis [3]. Following these pre-processing steps, a second quality control analysis is run using FastQC.</p>
-<p>Host-derived sequences are then filtered using the Bowtie2 alignment tool (version 2.2.5). First, a bowtie index is generated from the host genomic sequence and then sequences aligning with a local mode alignment score greater than 60 are removed [4]. SPAdes genome assembler (version 3.5.0) is used to generate contiguous sequences (contigs) [5].</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>This version of the Stenglein Lab Standard Taxonomic assessment pipeline requires the input of paired FASTQ files. Specific input instructions are explained in detail in the <a class="reference external" href="https://laurenkleine.github.io/shpinx-nf-doc-taxonomy/Usage.html">Running the Pipeline section</a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="quality-assessment-and-pre-processing">
+<h2>Quality Assessment and Pre-Processing<a class="headerlink" href="#quality-assessment-and-pre-processing" title="Permalink to this headline">¶</a></h2>
+<p>The input files are first assessed using FastQC (version 0.11.5) to perform an initial quality control inspection on the raw data [1]. Sequences are then trimmed using Cutadapt (version 1.9.1) to trim low-quality bases and adaptor sequences [2]. Default pipeline parameters set quality base to 33 and quality cutoff to 30 for the 50 and 30 ends. The first base of each sequence is also trimmed. The sequence clustering tool CD-HIT (version 4.6.5) is then used to collapse reads with 99% global pairwise identity, leaving only unique reads for further analysis [3]. Following these pre-processing steps, a second quality control analysis is run using FastQC.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="host-filtering">
+<h2>Host Filtering<a class="headerlink" href="#host-filtering" title="Permalink to this headline">¶</a></h2>
+<p>Host-derived sequences are then filtered using the Bowtie2 alignment tool (version 2.2.5). First, a bowtie index is generated from the host genomic sequence and then sequences aligning with a local mode alignment score greater than 60 are removed [4].</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="de-novo-assembly-of-reads">
+<h2>De novo Assembly of Reads<a class="headerlink" href="#de-novo-assembly-of-reads" title="Permalink to this headline">¶</a></h2>
+<p>SPAdes genome assembler (version 3.5.0) is used to generate contiguous sequences (contigs) of non-host reads [5].</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="taxonomic-assessment-of-contigs">
+<h2>Taxonomic Assessment of Contigs<a class="headerlink" href="#taxonomic-assessment-of-contigs" title="Permalink to this headline">¶</a></h2>
 <p>To taxonomically categorize sequences, the NCBI nt database is queried with all contigs using the BLASTn alignment tool (version 2.2.30+) [6,7]. Any hit with an expect value less than 10^8 is assigned taxonomically according to the sequence with the highest alignment score [6,8]. To attempt to categorize contigs that are too divergent to produce a high scoring nt–nt alignment, the NCBI nr database is queried in a DIAMOND (version 2.23) search with a minimum length of 20 amino acids and an expect value of 0.01 [9].</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
 <p>The output of this metagenomics pipeline is … which is described in more detail in the <a class="reference external" href="https://laurenkleine.github.io/shpinx-nf-doc-taxonomy/ex.html">Example Analysis and Output section</a>.</p>
+</div>
 </div>
 
 
