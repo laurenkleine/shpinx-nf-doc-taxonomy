@@ -3,23 +3,14 @@ Pipeline Summary
 
 
 The main steps in the pipeline are:
-
-
+    
 1.	Pre-processing quality assessment with FastQC
-
-
 
 2.	Trimming or removal of low quality sequences (cutadapt) and collapse of non-unique read pairs (CD-HIT)
 
-
-
 3.	Post-processing quality assessment with FastQC
 
-
-
 4.	Filtering of host sequences (Bowtie2)
-
-
 
 5.	De novo assembly of remaining reads (SPAdes) and taxonomic assessment of contigs, first by nucleotide to nucleotide alignments (BLASTn) and then by translated-nucleotide to protein alignments (DIAMOND)
 
@@ -31,3 +22,7 @@ This version of the Stenglein Lab Standard Taxonomic assessment pipeline require
 Host-derived sequences are then filtered using the Bowtie2 alignment tool (version 2.2.5). First, a bowtie index is generated from the host genomic sequence and then sequences aligning with a local mode alignment score greater than 60 are removed [4]. SPAdes genome assembler (version 3.5.0) is used to generate contiguous sequences (contigs) [5].
 
 To taxonomically categorize sequences, the NCBI nt database is queried with all contigs using the BLASTn alignment tool (version 2.2.30+) [6,7]. Any hit with an expect value less than 10^8 is assigned taxonomically according to the sequence with the highest alignment score [6,8]. To attempt to categorize contigs that are too divergent to produce a high scoring nt–nt alignment, the NCBI nr database is queried in a DIAMOND (version 2.23) search with a minimum length of 20 amino acids and an expect value of 0.01 [9].
+
+The output of this metagenomics pipeline is … which is described in more detail in the `Example Analysis and Output section <https://laurenkleine.github.io/shpinx-nf-doc-taxonomy/ex.html/>`_.
+
+
