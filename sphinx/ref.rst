@@ -1,9 +1,9 @@
 References
 ==========
 
-1. Andrews S. FastQC: a quality control tool for high throughput sequence data. [Internet]. 2011;18. Available from: http://www.bioinformatics.babraham.ac.uk/projects/fastqc
+1. Andrews S. FastQC: a quality control tool for high throughput sequence data. [Internet]. 2011;18. Available from: `http://www.bioinformatics.babraham.ac.uk/projects/fastqc`
 
-2. Martin M. Cutadapt removes adapter sequences from highthroughput sequencing reads. EMBnet.journal [Internet]. 2011;17. Available from: http://journal.embnet.org/index.php/embnetjourna l/article/view/200
+2. Martin M. Cutadapt removes adapter sequences from highthroughput sequencing reads. EMBnet.journal [Internet]. 2011;17. Available from: `http://journal.embnet.org/index.php/embnetjournal/article/view/200`
 
 3. Li W, Godzik A. Cd-hit: A fast program for clustering and comparing large sets of protein or nucleotide sequences. Bioinforma Oxf Engl 2006;22:1658–1659
 
@@ -15,6 +15,6 @@ References
 
 7. Camacho C, Coulouris G, Avagyan V, et al. BLAST+: Architecture and applications. BMC Bioinform. 2009;15:421
 
-8. BLAST+ Command Line Applications User Manual [Internet]. Available from: http://www.ncbi.nlm.nih.gov/bookshelf/ br.fcgi?book=helpblast
+8. BLAST+ Command Line Applications User Manual [Internet]. Available from: `http://www.ncbi.nlm.nih.gov/bookshelf`/ br.fcgi?book=helpblast
 
 9. Buchfink B, Xie C, Huson D. Fast and sensitive protein alignment using DIAMOND. Nat Methods 2015;12:59-60.
